@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TepMex/frontend-project-lvl1.git"
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/TepMex/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/TepMex/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/TepMex/frontend-project-lvl1#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
