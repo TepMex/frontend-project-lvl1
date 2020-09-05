@@ -11,6 +11,10 @@ Hexlet.io, фронтенд, уровень 1
 
 [![asciicast](https://asciinema.org/a/6SAfApCrmg0d8tsNcBt9pHf05.svg)](https://asciinema.org/a/6SAfApCrmg0d8tsNcBt9pHf05)
 
+# Game 3 - GCD
+
+[![asciicast](https://asciinema.org/a/MGHKhBFP5i6g9YnhSfNWjauW6.svg)](https://asciinema.org/a/MGHKhBFP5i6g9YnhSfNWjauW6)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/142bf7f434bfdf4b4e1e/maintainability)](https://codeclimate.com/github/TepMex/frontend-project-lvl1/maintainability)
 
 
