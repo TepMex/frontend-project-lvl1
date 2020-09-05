@@ -3,6 +3,8 @@ Hexlet.io, фронтенд, уровень 1
 
 Чтобы стать наставником Hexlet, нужно пройти путь студента
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/142bf7f434bfdf4b4e1e/maintainability)](https://codeclimate.com/github/TepMex/frontend-project-lvl1/maintainability) ![Node CI](https://github.com/TepMex/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
+
 # Game 1 - Even or not
 
 [![asciicast](https://asciinema.org/a/2OtOLgfCHE1HO741WYHEBOAHE.svg)](https://asciinema.org/a/2OtOLgfCHE1HO741WYHEBOAHE)
@@ -22,8 +24,3 @@ Hexlet.io, фронтенд, уровень 1
 # Game 5 - Prime numbers
 
 [![asciicast](https://asciinema.org/a/UzTJC4qqNWd83AKcuL7GeWDDS.svg)](https://asciinema.org/a/UzTJC4qqNWd83AKcuL7GeWDDS)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/142bf7f434bfdf4b4e1e/maintainability)](https://codeclimate.com/github/TepMex/frontend-project-lvl1/maintainability)
-
-
-![Node CI](https://github.com/TepMex/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
