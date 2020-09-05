@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startingScreen } from '../src/cli.js';
+import { initialGreetings } from '../src/engine.js';
 
-startingScreen();
+initialGreetings();

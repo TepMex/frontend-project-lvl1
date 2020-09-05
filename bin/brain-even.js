@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import { startingScreen } from '../src/cli.js';
-import { gameLoop } from '../src/brain-even.js';
+import { runGame } from '../src/engine.js';
+import { Games } from '../src/game-types.js';
 
-const userName = startingScreen();
-gameLoop(userName);
+runGame(Games.EVEN_OR_ODD);
