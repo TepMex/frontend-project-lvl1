@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { initialGreetings } from '../src/engine.js';
+import { initialGreetings } from '../src/index.js';
 
 initialGreetings();

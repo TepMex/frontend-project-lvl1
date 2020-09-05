@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
 import { Games } from './game-types.js';
-import brainEven from './brain-even.js';
+import brainEven from './games/brain-even.js';
+import brainCalc from './games/brain-calc.js';
 
 const GameEngines = {
   [Games.EVEN_OR_ODD]: brainEven,
+  [Games.CALC]: brainCalc,
 };
 
 const commonWelcome = () => console.log('Welcome to the Brain Games!');
@@ -38,7 +40,7 @@ const gameLoop = (questionFn, userName) => {
       rightAnswers += 1;
     }
   }
-}
+};
 
 export const initialGreetings = () => {
   commonWelcome();
@@ -50,7 +52,7 @@ export const initialGreetings = () => {
 export const runGame = (gameName) => {
   const game = GameEngines[gameName];
   const userName = initialGreetings();
-  console.log(game.startMessage)
+  console.log(game.startMessage);
   gameLoop(game.getQuestion, userName);
   console.log(`Congratulations, ${userName}!`);
 };
