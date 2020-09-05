@@ -4,12 +4,14 @@ import brainEven from './games/brain-even.js';
 import brainCalc from './games/brain-calc.js';
 import brainGCD from './games/brain-gcd.js';
 import brainProgression from './games/brain-progression.js';
+import brainPrime from './games/brain-prime.js';
 
 const GameEngines = {
   [Games.EVEN_OR_ODD]: brainEven,
   [Games.CALC]: brainCalc,
   [Games.GCD]: brainGCD,
   [Games.PROGRESSION]: brainProgression,
+  [Games.PRIME]: brainPrime,
 };
 
 const commonWelcome = () => console.log('Welcome to the Brain Games!');

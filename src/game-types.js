@@ -3,6 +3,7 @@ export const Games = {
   CALC: 'calculator',
   GCD: 'greatest common divider',
   PROGRESSION: 'progression',
+  PRIME: 'prime or not',
 };
 
 export default {
