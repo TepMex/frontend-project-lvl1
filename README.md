@@ -15,6 +15,10 @@ Hexlet.io, фронтенд, уровень 1
 
 [![asciicast](https://asciinema.org/a/MGHKhBFP5i6g9YnhSfNWjauW6.svg)](https://asciinema.org/a/MGHKhBFP5i6g9YnhSfNWjauW6)
 
+# Game 4 - Progression
+
+[![asciicast](https://asciinema.org/a/9MGoaMDRRMbctEimOn79nsi1F.svg)](https://asciinema.org/a/9MGoaMDRRMbctEimOn79nsi1F)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/142bf7f434bfdf4b4e1e/maintainability)](https://codeclimate.com/github/TepMex/frontend-project-lvl1/maintainability)
 
 
