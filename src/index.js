@@ -42,6 +42,7 @@ const gameLoop = (questionFn, userName) => {
 
     if (!result) {
       console.log(`Let's try again, ${userName}!`);
+      process.exit(0);
     } else {
       rightAnswers += 1;
     }
