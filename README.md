@@ -5,7 +5,11 @@ Hexlet.io, фронтенд, уровень 1
 
 # Game 1 - Even or not
 
-[Ссылка на аскинему](https://asciinema.org/a/kND22SREEwzmtxbK2nnTgOlt9)
+[![asciicast](https://asciinema.org/a/kND22SREEwzmtxbK2nnTgOlt9.svg)](https://asciinema.org/a/kND22SREEwzmtxbK2nnTgOlt9)
+
+# Game 2 - Calculator
+
+[![asciicast](https://asciinema.org/a/6SAfApCrmg0d8tsNcBt9pHf05.svg)](https://asciinema.org/a/6SAfApCrmg0d8tsNcBt9pHf05)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/142bf7f434bfdf4b4e1e/maintainability)](https://codeclimate.com/github/TepMex/frontend-project-lvl1/maintainability)
 
