@@ -1,4 +1,4 @@
-const startMessage = 'What is the result of the expression?';
+const START_MESSAGE = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
@@ -16,5 +16,5 @@ const getQuestion = () => {
 
 export default {
   getQuestion,
-  startMessage,
+  START_MESSAGE,
 };

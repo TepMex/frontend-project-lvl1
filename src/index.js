@@ -14,6 +14,8 @@ const GameEngines = {
   [Games.PRIME]: brainPrime,
 };
 
+const STREAK_TO_WIN = 3;
+
 const commonWelcome = () => console.log('Welcome to the Brain Games!');
 
 const askForName = () => readlineSync.question('May I have your name? ');
@@ -33,7 +35,7 @@ const printResult = (userAnswer, correctAnswer, result) => {
 const gameLoop = (questionFn, userName) => {
   let rightAnswers = 0;
 
-  while (rightAnswers < 3) {
+  while (rightAnswers < STREAK_TO_WIN) {
     const [question, answer] = questionFn();
     askQuestion(question);
     const userAnswer = askForAnswer();
@@ -59,7 +61,7 @@ export const initialGreetings = () => {
 export const runGame = (gameName) => {
   const game = GameEngines[gameName];
   const userName = initialGreetings();
-  console.log(game.startMessage);
+  console.log(game.START_MESSAGE);
   gameLoop(game.getQuestion, userName);
   console.log(`Congratulations, ${userName}!`);
 };

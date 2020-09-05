@@ -1,4 +1,4 @@
-const startMessage = 'Find the greatest common divisor of given numbers.';
+const START_MESSAGE = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (a, b) => {
   if (!b) {
@@ -19,5 +19,5 @@ const getQuestion = () => {
 
 export default {
   getQuestion,
-  startMessage,
+  START_MESSAGE,
 };

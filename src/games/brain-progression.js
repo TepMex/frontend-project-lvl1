@@ -1,4 +1,6 @@
-const startMessage = 'What number is missing in the progression?';
+const START_MESSAGE = 'What number is missing in the progression?';
+
+const PROGRESSION_SIZE = 10;
 
 const getRandomNumber = () => Math.floor(Math.random() * 10);
 
@@ -8,7 +10,7 @@ const getProgression = (step, elements) => {
 };
 
 const getQuestion = () => {
-  const progression = getProgression(getRandomNumber(), 10);
+  const progression = getProgression(getRandomNumber(), PROGRESSION_SIZE);
   const hiddenElIdx = Math.floor(Math.random() * progression.length);
   const answer = progression[hiddenElIdx].toString();
   progression[hiddenElIdx] = '..';
@@ -18,5 +20,5 @@ const getQuestion = () => {
 
 export default {
   getQuestion,
-  startMessage,
+  START_MESSAGE,
 };

@@ -1,4 +1,4 @@
-const startMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+const START_MESSAGE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getQuestion = () => {
   const question = Math.floor(Math.random() * 100);
@@ -8,5 +8,5 @@ const getQuestion = () => {
 
 export default {
   getQuestion,
-  startMessage,
+  START_MESSAGE,
 };

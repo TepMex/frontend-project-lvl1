@@ -1,4 +1,4 @@
-const startMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const START_MESSAGE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const PRIME_NUMBERS = [
   2,
@@ -15,5 +15,5 @@ const getQuestion = () => {
 
 export default {
   getQuestion,
-  startMessage,
+  START_MESSAGE,
 };
