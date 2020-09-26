@@ -1,18 +1,4 @@
 import readlineSync from 'readline-sync';
-import { Games } from './game-types.js';
-import brainEven from './games/brain-even.js';
-import brainCalc from './games/brain-calc.js';
-import brainGCD from './games/brain-gcd.js';
-import brainProgression from './games/brain-progression.js';
-import brainPrime from './games/brain-prime.js';
-
-const GameEngines = {
-  [Games.EVEN_OR_ODD]: brainEven,
-  [Games.CALC]: brainCalc,
-  [Games.GCD]: brainGCD,
-  [Games.PROGRESSION]: brainProgression,
-  [Games.PRIME]: brainPrime,
-};
 
 const STREAK_TO_WIN = 3;
 
@@ -58,8 +44,7 @@ export const initialGreetings = () => {
   return userName;
 };
 
-export const runGame = (gameName) => {
-  const game = GameEngines[gameName];
+export const runGame = (game) => {
   const userName = initialGreetings();
   console.log(game.START_MESSAGE);
   gameLoop(game.getQuestion, userName);
