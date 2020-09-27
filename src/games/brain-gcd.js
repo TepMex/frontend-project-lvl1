@@ -1,3 +1,5 @@
+import { getRandomInt } from '../utils.js';
+
 const START_MESSAGE = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (a, b) => {
@@ -8,16 +10,15 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-const getRandomNumber = () => Math.floor(Math.random() * 100);
-
-const getQuestion = () => {
-  const question = Array(2).fill().map(getRandomNumber);
-  // eslint-disable-next-line no-eval
-  const answer = gcd(question[0], question[1]);
-  return [question.join(' '), answer.toString()];
+const makeGameRoundData = () => {
+  const a = getRandomInt(0, 100);
+  const b = getRandomInt(0, 100);
+  const question = `${a} ${b}`;
+  const answer = gcd(a, b).toString();
+  return [question, answer];
 };
 
-export default {
-  getQuestion,
+export default () => ({
+  makeGameRoundData,
   START_MESSAGE,
-};
+});

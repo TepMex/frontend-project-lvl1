@@ -1,16 +1,15 @@
+import { getRandomInt } from '../utils.js';
+
 const START_MESSAGE = 'What number is missing in the progression?';
 
 const PROGRESSION_SIZE = 10;
 
-const getRandomNumber = () => Math.floor(Math.random() * 10);
+const getProgression = (start, step, elements) => Array(elements)
+  .fill()
+  .map((_, idx) => start + step * idx);
 
-const getProgression = (step, elements) => {
-  const start = getRandomNumber();
-  return Array(elements).fill().map((_, idx) => start + step * idx);
-};
-
-const getQuestion = () => {
-  const progression = getProgression(getRandomNumber(), PROGRESSION_SIZE);
+const makeGameRoundData = () => {
+  const progression = getProgression(getRandomInt(1, 100), getRandomInt(1, 10), PROGRESSION_SIZE);
   const hiddenElIdx = Math.floor(Math.random() * progression.length);
   const answer = progression[hiddenElIdx].toString();
   progression[hiddenElIdx] = '..';
@@ -18,7 +17,7 @@ const getQuestion = () => {
   return [question, answer];
 };
 
-export default {
-  getQuestion,
+export default () => ({
+  makeGameRoundData,
   START_MESSAGE,
-};
+});

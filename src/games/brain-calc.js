@@ -1,20 +1,33 @@
+import { getRandomElement, getRandomInt } from '../utils.js';
+
 const START_MESSAGE = 'What is the result of the expression?';
 
-const getRandomOperation = () => {
-  const operations = ['+', '-', '*'];
-  return operations[Math.floor(Math.random() * operations.length)];
+const OPERATIONS = ['+', '-', '*'];
+
+const result = (a, b, operation) => {
+  switch (operation) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      throw Error(`incorrect operation or operands: ${a} ${operation} ${b}`);
+  }
 };
 
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+const makeGameRoundData = () => {
+  const a = getRandomInt(1, 100);
+  const b = getRandomInt(1, 100);
+  const operation = getRandomElement(OPERATIONS);
 
-const getQuestion = () => {
-  const question = `${getRandomNumber()} ${getRandomOperation()} ${getRandomNumber()}`;
-  // eslint-disable-next-line no-eval
-  const answer = eval(question).toString();
+  const question = `${a} ${operation} ${b}`;
+  const answer = result(a, b, operation).toString();
   return [question, answer];
 };
 
-export default {
-  getQuestion,
+export default () => ({
+  makeGameRoundData,
   START_MESSAGE,
-};
+});

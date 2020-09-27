@@ -2,56 +2,42 @@ import readlineSync from 'readline-sync';
 
 const STREAK_TO_WIN = 3;
 
-const commonWelcome = () => console.log('Welcome to the Brain Games!');
-
-const askForName = () => readlineSync.question('May I have your name? ');
-
-const greetingUser = (name) => console.log(`Hello, ${name}!`);
-
-const askQuestion = (question) => console.log(`Question: ${question}`);
-
-const askForAnswer = () => readlineSync.question('Your answer: ');
-
 const printResult = (userAnswer, correctAnswer, result) => {
   const message = result ? 'Correct!'
     : `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`;
   console.log(message);
 };
 
-const gameLoop = (questionFn, userName) => {
-  let rightAnswers = 0;
-
-  while (rightAnswers < STREAK_TO_WIN) {
-    const [question, answer] = questionFn();
-    askQuestion(question);
-    const userAnswer = askForAnswer();
+const gameLoop = (getNextRoundData, userName) => {
+  for (let i = 0; i < STREAK_TO_WIN; i += 1) {
+    const [question, answer] = getNextRoundData();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const result = userAnswer === answer;
+
     printResult(userAnswer, answer, result);
 
     if (!result) {
       console.log(`Let's try again, ${userName}!`);
       process.exit(0);
-    } else {
-      rightAnswers += 1;
     }
   }
 };
 
-export const initialGreetings = () => {
-  commonWelcome();
-  const userName = askForName();
-  greetingUser(userName);
-  return userName;
-};
-
-export const runGame = (game) => {
-  const userName = initialGreetings();
-  console.log(game.START_MESSAGE);
-  gameLoop(game.getQuestion, userName);
-  console.log(`Congratulations, ${userName}!`);
+export const runGame = (createGame) => {
+  try {
+    const game = createGame();
+    console.log('Welcome to the Brain Games!');
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${userName}!`);
+    console.log(game.START_MESSAGE);
+    gameLoop(game.makeGameRoundData, userName);
+    console.log(`Congratulations, ${userName}!`);
+  } catch (e) {
+    console.log('cannot create game:', e);
+  }
 };
 
 export default {
-  initialGreetings,
   runGame,
 };

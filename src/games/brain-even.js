@@ -1,12 +1,14 @@
+import { getRandomInt, isEven } from '../utils.js';
+
 const START_MESSAGE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getQuestion = () => {
-  const question = Math.floor(Math.random() * 100);
-  const answer = question % 2 ? 'no' : 'yes';
+const makeGameRoundData = () => {
+  const question = getRandomInt(0, 100);
+  const answer = isEven(question) ? 'no' : 'yes';
   return [question, answer];
 };
 
-export default {
-  getQuestion,
+export default () => ({
+  makeGameRoundData,
   START_MESSAGE,
-};
+});
