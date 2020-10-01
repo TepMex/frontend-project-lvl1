@@ -1,21 +1,24 @@
-import { getRandomInt, isPrime } from '../utils.js';
+import { getRandomInt } from '../utils.js';
 
 const START_MESSAGE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generatePrimeNumbers = (from, to) => {
-  const result = [];
-  for (let i = from; i < to; i += 1) {
-    if (isPrime(i)) {
-      result.push(i);
+const isPrime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  return result;
+
+  return true;
 };
 
 const makeGameRoundData = () => {
-  const primeNumbers = generatePrimeNumbers(0, 100);
   const question = getRandomInt(0, 100);
-  const answer = primeNumbers.includes(question) ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
 

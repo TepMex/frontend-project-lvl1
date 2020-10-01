@@ -10,9 +10,9 @@ const getProgression = (start, step, elements) => Array(elements)
 
 const makeGameRoundData = () => {
   const progression = getProgression(getRandomInt(1, 100), getRandomInt(1, 10), PROGRESSION_SIZE);
-  const hiddenElIdx = Math.floor(Math.random() * progression.length);
-  const answer = progression[hiddenElIdx].toString();
-  progression[hiddenElIdx] = '..';
+  const hiddenElementIndex = getRandomInt(0, progression.length - 1);
+  const answer = progression[hiddenElementIndex].toString();
+  progression[hiddenElementIndex] = '..';
   const question = progression.join(' ');
   return [question, answer];
 };

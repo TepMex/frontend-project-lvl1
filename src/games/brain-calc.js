@@ -4,7 +4,7 @@ const START_MESSAGE = 'What is the result of the expression?';
 
 const OPERATIONS = ['+', '-', '*'];
 
-const result = (a, b, operation) => {
+const calculateBinaryOperation = (a, b, operation) => {
   switch (operation) {
     case '+':
       return a + b;
@@ -23,7 +23,7 @@ const makeGameRoundData = () => {
   const operation = getRandomElement(OPERATIONS);
 
   const question = `${a} ${operation} ${b}`;
-  const answer = result(a, b, operation).toString();
+  const answer = calculateBinaryOperation(a, b, operation).toString();
   return [question, answer];
 };
 
